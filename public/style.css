@@ -1,0 +1,18 @@
+body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+
+.popup-content {
+  display: inline-block
+}
+
+.pin-icon {
+  font-size: 20px;
+  color: blue
+}
+
+.vl {
+  border-left: 1px solid #bababa;
+  height: 15px;
+  padding: 0px;
+  margin: 10px;
+}
