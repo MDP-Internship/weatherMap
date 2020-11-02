@@ -22,7 +22,7 @@ map.on('click', function (e) {
   var query = "?lang=" + lang + "&lat=" + lot;
 
   popup(e.lngLat);
-  $.get(herokuUrl + query, function (data, status) {
+  $.get(herokuUrl+"mapPin/" + query, function (data, status) {
     // alert("Data: " + data + "\nStatus: " + status);
     // console.log(data);
     place[0] = data.map;
