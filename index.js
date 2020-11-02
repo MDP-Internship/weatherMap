@@ -1,9 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.listen(8000, () => {
-    console.log('App listening on port 8000!');
-});
+
 
 var mapPinRoute = require("./routes/mapPinInfo");
 
@@ -17,3 +15,7 @@ app.use(express.static(__dirname + '/public'));
 app.use("/mapPin",mapPinRoute);
 
 
+//listen
+
+var porta = process.env.PORT || 8080;
+app.listen(porta, () => console.log("Example app listening on port 8080!"));
