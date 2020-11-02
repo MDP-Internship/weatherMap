@@ -6,7 +6,7 @@ var weatherToken = "d8e9fc63a25e52e274bfe51144f4c051";
 
 
 
-function weathercityname(cityname, callback) {
+async function  weathercityname(cityname, callback) {
     let url = baseUrl + "?q=" + cityname + "&appid=" + weatherToken + "&units=metric&lang=tr";
     request(
         {
@@ -19,8 +19,8 @@ function weathercityname(cityname, callback) {
         });
 }
 
-function weatherLocation(lat, long, callback) {
-    let url = baseUrl + "?lat=" + lat + "&lon=" + long + "&appid=" + weatherToken;
+async function weatherLocation(lat, long, callback) {
+    let url = baseUrl + "?lat=" + lat + "&lon=" + long +"&units=metric"+"&appid=" + weatherToken;
     request(
         {
             uri: url,

@@ -1,0 +1,80 @@
+{
+    "type": "FeatureCollection",
+    "query": [
+        37.21322953818863,
+        36.365656577636855
+    ],
+    "features": [
+        {
+            "id": "region.9774188749663910",
+            "type": "Feature",
+            "place_type": [
+                "region"
+            ],
+            "relevance": 1,
+            "properties": {
+                "wikidata": "Q214064",
+                "short_code": "SY-HL"
+            },
+            "text": "Aleppo",
+            "place_name": "Aleppo, Syria",
+            "bbox": [
+                36.5428640455877,
+                35.3767150014512,
+                38.7203859988623,
+                36.9230479974237
+            ],
+            "center": [
+                37.6,
+                36.24
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    37.6,
+                    36.24
+                ]
+            },
+            "context": [
+                {
+                    "id": "country.9990576025131040",
+                    "wikidata": "Q858",
+                    "short_code": "sy",
+                    "text": "Syria"
+                }
+            ]
+        },
+        {
+            "id": "country.9990576025131040",
+            "type": "Feature",
+            "place_type": [
+                "country"
+            ],
+            "relevance": 1,
+            "properties": {
+                "wikidata": "Q858",
+                "short_code": "sy"
+            },
+            "text": "Syria",
+            "place_name": "Syria",
+            "bbox": [
+                35.6173485000036,
+                32.3116231559487,
+                42.3761548946494,
+                37.3188349709773
+            ],
+            "center": [
+                38.50559189697,
+                35.0130478400731
+            ],
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    38.50559189697,
+                    35.0130478400731
+                ]
+            }
+        }
+    ],
+    "attribution": "NOTICE: © 2020 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained. POI(s) provided by Foursquare."
+}
