@@ -3,9 +3,7 @@ import mapController from '../map/map';
 import weatherController from '../weather/weather';
 
 
-
-
-
+// export default async function mapPin(lang, long) { //browser tarafı cevap vermiyor.
 
 export default  function mapPin(lang, long) {
 
