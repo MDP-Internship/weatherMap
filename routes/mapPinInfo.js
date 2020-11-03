@@ -1,19 +1,19 @@
 
-const express = require("express");
-const mapPin = require("../controller/mapPin/mapPin");
+import { Router } from "express";
+import mapPin from "../controller/mapPin/mapPin";
 
-const router = express.Router();
+// import alias using !!!
 
-var mapPın = mapPin.mapPinInfo;
+const router = Router();
+
+
 
 router.get("/", async (req, res) => {
-    var lang = req.query.lang;
-    var lat = req.query.lat;
+    const { lang } = req.query;
+    const { lat } = req.query;
 
-    res.send(200, mapPın(lang, lat));
+    res.send(200, mapPin(lang, lat));
 });
 
-module.exports = router;
+export default router;
 
-
-//37.21322953818863, 36.365656577636854

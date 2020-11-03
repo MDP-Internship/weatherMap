@@ -1,30 +1,25 @@
-const map = require('../map/map.js');
-const weather = require('../weather/weather');
-
-const mapInfo = map.mapToAdress;
-const weatherInfo = weather.wlocation;
-
-var pinInfo = {
-    map: "",
-    weather: ""
-};
+// import { static } from 'express';
+import mapController from '../map/map';
+import weatherController from '../weather/weather';
 
 
-var mapPinInfo = (lang, long) => {
-  
 
-    mapInfo(lang, long, (err, res, body) => {
-        pinInfo.map = pinInfo.map = body.features[1].place_name;
+
+
+
+export default async function mapPin(lang, long) {
+
+    const pinInfo = {
+        map: "",
+        weather: ""
+    };
+
+    mapController.mapToAdress(lang, long, (err, response, body) => {
+        pinInfo.map = body.features[1].place_name;
     });
-    weatherInfo(lang, long, (err, res, body) => {
+    weatherController.weatherLocation(lang, long, (err, response, body) => {
         pinInfo.weather = body.main.temp;
     });
 
     return pinInfo;
-
 };
-
-
-
-
-exports.mapPinInfo = mapPinInfo;

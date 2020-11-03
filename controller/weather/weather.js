@@ -1,41 +1,40 @@
-var request = require("request");
+import request from 'request';
 
-var baseUrl = "http://api.openweathermap.org/data/2.5/weather";
+const baseUrl = "http://api.openweathermap.org/data/2.5/weather";
 
-var weatherToken = "d8e9fc63a25e52e274bfe51144f4c051";
+const weatherToken = "d8e9fc63a25e52e274bfe51144f4c051";
 
+class weatherController {
 
+    static weathercityname = async (cityname, callback) => {
+        const url = `${baseUrl}?q=${cityname}&appid=${weatherToken}&units=metric&lang=tr`;
+        request(
+            {
+                uri: url,
+                json: true
+            }
+            , (err, response, body) => {
 
-async function  weathercityname(cityname, callback) {
-    let url = baseUrl + "?q=" + cityname + "&appid=" + weatherToken + "&units=metric&lang=tr";
-    request(
-        {
-            uri: url,
-            json: true
-        }
-        , function (err, response, body) {
+                callback(err, response, body);
+            });
+    }
 
-            callback(err, response, body);
-        });
+    static weatherLocation = async (lat, long, callback) => {
+        const url = `${baseUrl}?lat=${lat}&lon=${long}&units=metric&appid=${weatherToken}`;
+        request(
+            {
+                uri: url,
+                json: true
+            }
+            , (err, response, body) => {
+                callback(err, response, body);
+
+            });
+    }
+
 }
 
-async function weatherLocation(lat, long, callback) {
-    let url = baseUrl + "?lat=" + lat + "&lon=" + long +"&units=metric"+"&appid=" + weatherToken;
-    request(
-        {
-            uri: url,
-            json: true
-        }
-        , function (err, response, body) {
-            callback(err, response, body);
 
-        });
-}
-
-
-
-
-exports.wcityname = weathercityname;
-exports.wlocation = weatherLocation;
+export default weatherController;
 
 
