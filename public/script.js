@@ -10,7 +10,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3dlbmxhbWIiLCJhIjoiY2lleWljcnF4MDBiOXQ0bHR0a
 const ankara = [34.51773317578852, 39.06580893051233];
 const place = Array(2);
 
-// const localUrl = "http://localhost:8080/";
+const localUrl = "http://localhost:8000/";
 const herokuUrl = "https://weatherpin.herokuapp.com/";
 
 this.map = new mapboxgl.Map({
@@ -27,7 +27,7 @@ map.on('click', (e) => {
   const query = `?lang=${lang}&lat=${lot}`;
 
   popup(e.lngLat);
-  $.get(`${herokuUrl}mapPin/${query}`, (data, status) => {
+  $.get(`${localUrl}mapPin/${query}`, (data, status) => {
       // alert("Data: " + data + "\nStatus: " + status);
       // console.log(data);
       place[0] = data.map;

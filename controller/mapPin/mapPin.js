@@ -7,9 +7,10 @@ import weatherController from '../weather/weather';
 
 
 
-export default async function mapPin(lang, long) {
+export default  function mapPin(lang, long) {
 
-    const pinInfo = {
+    // eslint-disable-next-line no-var
+    var pinInfo = {
         map: "",
         weather: ""
     };
