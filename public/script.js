@@ -22,9 +22,9 @@ this.map = new mapboxgl.Map({
 
 map.on('click', (e) => {
   // console.log('A click event has occurred at ' + e.lngLat);
-  const lang = e.lngLat.lat;
-  const lot = e.lngLat.lng;
-  const query = `?lang=${lang}&lat=${lot}`;
+  const {lat} = e.lngLat;
+  const long = e.lngLat.lng;
+  const query = `?long=${long}&lat=${lat}`;
 
   popup(e.lngLat);
   $.get(`${localUrl}mapPin/${query}`, (data, status) => {

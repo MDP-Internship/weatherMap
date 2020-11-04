@@ -13,3 +13,13 @@
     HolidayTypesTR
   };
    */
+
+const CoordinateType = {
+  "lang": "longitude ",
+  "lat": "latitude"
+};
+
+export default CoordinateType;
+
+
+
