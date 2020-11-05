@@ -28,19 +28,29 @@ class weatherController {
 
     static weatherLocation = async (long, lat) => {
         const url = `${baseUrl}?lat=${lat}&lon=${long}&units=metric&appid=${weatherToken}`;
-        return request(
+
+        let weather = "hava";
+
+
+        request(
             {
                 method: "GET",
                 uri: url,
                 json: true
             }
-        ).then((htmlString) => {
-            return htmlString.weather.main;
-        })
-            .catch((err) => {
-                return `Hata:${err}`;
-            });
+        )
+            .then(((result) => {
+                weather = result;
 
+            })).catch((err) => {
+
+                weather = "catch";
+
+
+            })
+
+
+        return weather;
 
 
 

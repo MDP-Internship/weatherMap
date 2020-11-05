@@ -1,0 +1,8 @@
+
+@host= http://localhost:8080
+@query=?long=39.25322010853384&lat=33.24331911328855
+GET {{host}}/mapPin{{query}} HTTP/1.1
+
+###
+
+GET http://api.openweathermap.org/data/2.5/weather?lat=33.24331911328855&lon=39.25322010853384&units=metric&appid=d8e9fc63a25e52e274bfe51144f4c051

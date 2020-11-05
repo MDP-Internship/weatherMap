@@ -6,8 +6,9 @@ const token = 'pk.eyJ1Ijoib3dlbmxhbWIiLCJhIjoiY2lleWljcnF4MDBiOXQ0bHR0anRvamtucS
 
 class MapController {
 
-    static mapToAdress = (lat, long) => {
+    static mapToAdress = (lat, long, callback) => {
         const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${long},${lat}.json?access_token=${token}`;
+
         request(
             {
                 uri: url,
@@ -15,11 +16,10 @@ class MapController {
             }
             // eslint-disable-next-line consistent-return
             , (err, response, body) => {
-                if (!err && response.statusCode === 200) {
-                    return body;
-                }
-
+                return callback(body);
             });
+
+
     }
 
 
