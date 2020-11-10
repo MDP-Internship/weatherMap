@@ -10,7 +10,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoib3dlbmxhbWIiLCJhIjoiY2lleWljcnF4MDBiOXQ0bHR0a
 const ankara = [34.51773317578852, 39.06580893051233];
 const place = Array(2);
 
-const localUrl = "http://localhost:8000/";
+const localUrl = "http://localhost:8080/";
 const herokuUrl = "https://weatherpin.herokuapp.com/";
 
 this.map = new mapboxgl.Map({
@@ -26,19 +26,23 @@ map.on('click', (e) => {
   const long = e.lngLat.lng;
   const query = `?long=${long}&lat=${lat}`;
 
-  popup(e.lngLat);
+  
+
   $.get(`${localUrl}mapPin/${query}`, (data, status) => {
       // alert("Data: " + data + "\nStatus: " + status);
       // console.log(data);
+      place[0] = "";
+      place[1] = "";
       place[0] = data.map;
       place[1] = data.weather;
-
+      popup(e.lngLat);
+      
 
 
     });
 });
 
-var popup = (coordinate) => new mapboxgl.Popup({
+var popup =async (coordinate) => new mapboxgl.Popup({
   closeOnClick: true,
   closeButton: true,
   anchor: 'bottom-left',

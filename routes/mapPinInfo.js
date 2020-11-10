@@ -1,8 +1,8 @@
 import { Router } from "express";
-import MapController from "../controllers/mapPin/mapPin";
+import mapPin from "../controllers/mapPin/mapPin";
 
 const router = Router();
-router.get("/", MapController.info);
+router.get("/", mapPin);
 
 export default router;
 
